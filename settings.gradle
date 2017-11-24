@@ -1,1 +1,1 @@
-include ':app', ':aboutpage'
+include ':app', ':library'
