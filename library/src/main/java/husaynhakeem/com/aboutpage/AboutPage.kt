@@ -50,6 +50,16 @@ class AboutPage(var context: Context) {
         return this
     }
 
+    fun addTwitter(twitterId: String): AboutPage {
+        return addTwitter(context.getString(R.string.title_email), twitterId)
+    }
+
+    fun addTwitter(title: String, twitterId: String): AboutPage {
+        val itemView = viewFromItem(R.drawable.ic_email, title)
+        itemView.setOnClickListener({ openTwitter(context, twitterId) })
+        return this
+    }
+
     private fun addItem(@DrawableRes icon: Int, title: String): View {
         val itemView = viewFromItem(icon, title)
         elementsGroup.addView(itemView)
