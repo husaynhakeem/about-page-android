@@ -15,5 +15,17 @@ fun sendEmail(context: Context, emailAddress: String) {
         context.startActivity(emailIntent)
     } catch (e: ActivityNotFoundException) {
         Log.e(TAG, "No available application found to handle email sending")
+        e.printStackTrace()
+    }
+}
+
+fun openWebPage(context: Context, webPageUrl: String) {
+    val webIntent = Intent(Intent.ACTION_VIEW)
+    webIntent.setData(Uri.parse(webPageUrl))
+    try {
+        context.startActivity(webIntent)
+    } catch (e: ActivityNotFoundException) {
+        Log.e(TAG, "No available application found to handle webpage opening")
+        e.printStackTrace()
     }
 }

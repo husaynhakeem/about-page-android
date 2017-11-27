@@ -20,9 +20,23 @@ class AboutPage(var context: Context) {
         elementsGroup = view.findViewById(R.id.ll_elements)
     }
 
+    fun addEmail(email: String): AboutPage {
+        return addEmail(context.getString(R.string.title_email), email)
+    }
+
     fun addEmail(title: String, email: String): AboutPage {
         val itemView = addItem(R.drawable.ic_email, title)
         itemView.setOnClickListener({ sendEmail(context, email) })
+        return this
+    }
+
+    fun addWebsite(websiteUrl: String): AboutPage {
+        return addWebsite(context.getString(R.string.title_email), websiteUrl)
+    }
+
+    fun addWebsite(title: String, websiteUrl: String): AboutPage {
+        val itemView = addItem(R.drawable.ic_email, title)
+        itemView.setOnClickListener({ openWebPage(context, websiteUrl) })
         return this
     }
 
