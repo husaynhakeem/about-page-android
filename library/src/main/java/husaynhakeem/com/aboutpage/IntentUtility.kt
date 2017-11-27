@@ -63,3 +63,12 @@ fun openYoutube(context: Context, youtubeChannel: String) {
         context.startActivity(youtubeIntent)
     }
 }
+
+fun openPlayStore(context: Context, playStoreId: String) {
+    try {
+        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + playStoreId)))
+    } catch (e: ActivityNotFoundException) {
+        Log.e(TAG, "Play store not installed on current device")
+        e.printStackTrace()
+    }
+}

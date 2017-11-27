@@ -70,6 +70,16 @@ class AboutPage(var context: Context) {
         return this
     }
 
+    fun addPlayStore(playStoreId: String): AboutPage {
+        return addPlayStore(context.getString(R.string.title_email), playStoreId)
+    }
+
+    fun addPlayStore(title: String, playStoreId: String): AboutPage {
+        val itemView = viewFromItem(R.drawable.ic_email, title)
+        itemView.setOnClickListener({ openPlayStore(context, playStoreId) })
+        return this
+    }
+
     private fun addItem(@DrawableRes icon: Int, title: String): View {
         val itemView = viewFromItem(icon, title)
         elementsGroup.addView(itemView)
