@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AboutPage</string>
+    <string name="logo_description">About page logo</string>
+    <string name="item_icon_description">Item icon description</string>
 </resources>
