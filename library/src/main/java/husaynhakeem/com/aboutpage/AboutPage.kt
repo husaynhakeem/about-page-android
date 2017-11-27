@@ -40,6 +40,16 @@ class AboutPage(var context: Context) {
         return this
     }
 
+    fun addFacebook(facebookUsername: String): AboutPage {
+        return addFacebook(context.getString(R.string.title_email), facebookUsername)
+    }
+
+    fun addFacebook(title: String, facebookUsername: String): AboutPage {
+        val itemView = viewFromItem(R.drawable.ic_email, title)
+        itemView.setOnClickListener({ openFacebookPage(context, facebookUsername) })
+        return this
+    }
+
     private fun addItem(@DrawableRes icon: Int, title: String): View {
         val itemView = viewFromItem(icon, title)
         elementsGroup.addView(itemView)
