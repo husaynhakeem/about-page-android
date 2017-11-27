@@ -72,3 +72,14 @@ fun openPlayStore(context: Context, playStoreId: String) {
         e.printStackTrace()
     }
 }
+
+fun openInstagram(context: Context, userId: String) {
+    val instagramIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/_u/" + userId))
+    try {
+        instagramIntent.setPackage("com.instagram.android")
+        context.startActivity(instagramIntent)
+    } catch (e: ActivityNotFoundException) {
+        Log.e(TAG, "Instagram application uninstalled on current device")
+        context.startActivity(instagramIntent)
+    }
+}

@@ -80,6 +80,16 @@ class AboutPage(var context: Context) {
         return this
     }
 
+    fun addInstagram(userId: String): AboutPage {
+        return addInstagram(context.getString(R.string.title_email), userId)
+    }
+
+    fun addInstagram(title: String, userId: String): AboutPage {
+        val itemView = viewFromItem(R.drawable.ic_email, title)
+        itemView.setOnClickListener({ openInstagram(context, userId) })
+        return this
+    }
+
     private fun addItem(@DrawableRes icon: Int, title: String): View {
         val itemView = viewFromItem(icon, title)
         elementsGroup.addView(itemView)
