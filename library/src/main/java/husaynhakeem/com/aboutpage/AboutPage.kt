@@ -35,7 +35,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addWebsite(title: String, websiteUrl: String): AboutPage {
-        val itemView = addItem(R.drawable.ic_email, title)
+        val itemView = addItem(R.drawable.ic_website, title)
         itemView.setOnClickListener({ openWebPage(context, websiteUrl) })
         return this
     }
@@ -45,7 +45,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addFacebook(title: String, facebookUsername: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_facebook, title)
         itemView.setOnClickListener({ openFacebookPage(context, facebookUsername) })
         return this
     }
@@ -55,7 +55,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addTwitter(title: String, twitterId: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_twitter, title)
         itemView.setOnClickListener({ openTwitter(context, twitterId) })
         return this
     }
@@ -65,7 +65,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addYoutube(title: String, youtubeChannel: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_youtube, title)
         itemView.setOnClickListener({ openYoutube(context, youtubeChannel) })
         return this
     }
@@ -75,7 +75,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addPlayStore(title: String, playStoreId: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_playsotre, title)
         itemView.setOnClickListener({ openPlayStore(context, playStoreId) })
         return this
     }
@@ -85,7 +85,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addInstagram(title: String, userId: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_instagram, title)
         itemView.setOnClickListener({ openInstagram(context, userId) })
         return this
     }
@@ -95,7 +95,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addGithub(title: String, userId: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_github, title)
         itemView.setOnClickListener({ openGithub(context, userId) })
         return this
     }
@@ -105,7 +105,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addPinterest(title: String, userId: String): AboutPage {
-        val itemView = viewFromItem(R.drawable.ic_email, title)
+        val itemView = viewFromItem(R.drawable.ic_pinterest, title)
         itemView.setOnClickListener({ openPinterest(context, userId) })
         return this
     }
