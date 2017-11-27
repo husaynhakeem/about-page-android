@@ -60,6 +60,16 @@ class AboutPage(var context: Context) {
         return this
     }
 
+    fun addYoutube(youtubeChannel: String): AboutPage {
+        return addYoutube(context.getString(R.string.title_email), youtubeChannel)
+    }
+
+    fun addYoutube(title: String, youtubeChannel: String): AboutPage {
+        val itemView = viewFromItem(R.drawable.ic_email, title)
+        itemView.setOnClickListener({ openYoutube(context, youtubeChannel) })
+        return this
+    }
+
     private fun addItem(@DrawableRes icon: Int, title: String): View {
         val itemView = viewFromItem(icon, title)
         elementsGroup.addView(itemView)

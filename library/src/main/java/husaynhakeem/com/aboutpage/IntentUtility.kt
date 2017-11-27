@@ -37,7 +37,6 @@ fun openFacebookPage(context: Context, facebookUsername: String) {
             facebookUri = Uri.parse("fb://facewebmodal/f?href=" + facebookUsername)
     } catch (e: PackageManager.NameNotFoundException) {
         Log.e(TAG, "Facebook application uninstalled on current device")
-        e.printStackTrace()
     }
     context.startActivity(Intent(Intent.ACTION_VIEW, facebookUri))
 }
@@ -50,7 +49,17 @@ fun openTwitter(context: Context, twitterId: String) {
             twitterUri = Uri.parse("twitter://user?screen_name=" + twitterId)
     } catch (e: PackageManager.NameNotFoundException) {
         Log.e(TAG, "Twitter application uninstalled on current device")
-        e.printStackTrace()
     }
     context.startActivity(Intent(Intent.ACTION_VIEW, twitterUri))
+}
+
+fun openYoutube(context: Context, youtubeChannel: String) {
+    val youtubeIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/user/channel/" + youtubeChannel))
+    try {
+        youtubeIntent.setPackage("com.google.android.youtube")
+        context.startActivity(youtubeIntent)
+    } catch (e: ActivityNotFoundException) {
+        Log.e(TAG, "Youtube application uninstalled on current device")
+        context.startActivity(youtubeIntent)
+    }
 }
