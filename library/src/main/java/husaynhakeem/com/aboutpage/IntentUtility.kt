@@ -83,3 +83,14 @@ fun openInstagram(context: Context, userId: String) {
         context.startActivity(instagramIntent)
     }
 }
+
+fun openGithub(context: Context, userId: String) {
+    val githubIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/" + userId))
+    try {
+        githubIntent.addCategory(Intent.CATEGORY_BROWSABLE)
+        context.startActivity(githubIntent)
+    } catch (e: ActivityNotFoundException) {
+        Log.e(TAG, "No available application found to handle -github- webpage opening")
+        e.printStackTrace()
+    }
+}
