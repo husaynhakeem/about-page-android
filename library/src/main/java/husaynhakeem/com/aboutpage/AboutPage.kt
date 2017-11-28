@@ -40,7 +40,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addEmail(title: String, email: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_email, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_email, R.color.tint_email, title)
         itemView.setOnClickListener({ sendEmail(context, email) })
         return this
     }
@@ -50,7 +50,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addWebsite(title: String, websiteUrl: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_website, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_website, R.color.tint_website, title)
         itemView.setOnClickListener({ openWebPage(context, websiteUrl) })
         return this
     }
@@ -60,7 +60,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addFacebook(title: String, facebookUsername: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_facebook, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_facebook, R.color.tint_facebook, title)
         itemView.setOnClickListener({ openFacebookPage(context, facebookUsername) })
         return this
     }
@@ -70,7 +70,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addTwitter(title: String, twitterId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_twitter, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_twitter, R.color.tint_twitter, title)
         itemView.setOnClickListener({ openTwitter(context, twitterId) })
         return this
     }
@@ -80,17 +80,17 @@ class AboutPage(var context: Context) {
     }
 
     fun addYoutube(title: String, youtubeChannel: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_youtube, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_youtube, R.color.tint_youtube, title)
         itemView.setOnClickListener({ openYoutube(context, youtubeChannel) })
         return this
     }
 
     fun addPlayStore(playStoreId: String): AboutPage {
-        return addPlayStore(context.getString(R.string.title_play_store), playStoreId)
+        return addPlayStore(context.getString(R.string.title_playstore), playStoreId)
     }
 
     fun addPlayStore(title: String, playStoreId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_playstore, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_playstore, R.color.tint_playstore, title)
         itemView.setOnClickListener({ openPlayStore(context, playStoreId) })
         return this
     }
@@ -100,7 +100,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addInstagram(title: String, userId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_instagram, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_instagram, R.color.tint_instagram, title)
         itemView.setOnClickListener({ openInstagram(context, userId) })
         return this
     }
@@ -110,7 +110,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addGithub(title: String, userId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_github, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_github, R.color.tint_github, title)
         itemView.setOnClickListener({ openGithub(context, userId) })
         return this
     }
@@ -120,7 +120,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addPinterest(title: String, userId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_pinterest, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_pinterest, R.color.tint_pinterest, title)
         itemView.setOnClickListener({ openPinterest(context, userId) })
         return this
     }
