@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.layout_item.view.*
 fun addItem(layoutInflater: LayoutInflater, context: Context, elementsGroup: ViewGroup, @DrawableRes icon: Int, @ColorRes iconTint: Int, title: String): View {
     val itemView = viewFromItem(layoutInflater, context, icon, iconTint, title)
     elementsGroup.addView(itemView)
+    elementsGroup.addView(layoutInflater.inflate(R.layout.layout_separator, null))
     return itemView
 }
 

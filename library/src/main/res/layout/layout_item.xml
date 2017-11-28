@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/iv_item_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/icon_dimension"
+        android:layout_height="@dimen/icon_dimension"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/icon_title_margin"
+        android:layout_marginRight="@dimen/icon_title_margin"
         android:contentDescription="@string/item_icon_description"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_email" />
 
     <TextView
         android:id="@+id/tv_item_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_item_icon"
+        android:layout_toRightOf="@+id/iv_item_icon"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="14sp"
+        tools:text="@string/title_email" />
 
 </RelativeLayout>
