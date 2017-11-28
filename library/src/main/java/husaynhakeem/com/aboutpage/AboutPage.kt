@@ -46,7 +46,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addWebsite(websiteUrl: String): AboutPage {
-        return addWebsite(context.getString(R.string.title_email), websiteUrl)
+        return addWebsite(context.getString(R.string.title_website), websiteUrl)
     }
 
     fun addWebsite(title: String, websiteUrl: String): AboutPage {
@@ -56,7 +56,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addFacebook(facebookUsername: String): AboutPage {
-        return addFacebook(context.getString(R.string.title_email), facebookUsername)
+        return addFacebook(context.getString(R.string.title_facebook), facebookUsername)
     }
 
     fun addFacebook(title: String, facebookUsername: String): AboutPage {
@@ -66,7 +66,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addTwitter(twitterId: String): AboutPage {
-        return addTwitter(context.getString(R.string.title_email), twitterId)
+        return addTwitter(context.getString(R.string.title_twitter), twitterId)
     }
 
     fun addTwitter(title: String, twitterId: String): AboutPage {
@@ -76,7 +76,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addYoutube(youtubeChannel: String): AboutPage {
-        return addYoutube(context.getString(R.string.title_email), youtubeChannel)
+        return addYoutube(context.getString(R.string.title_youtube), youtubeChannel)
     }
 
     fun addYoutube(title: String, youtubeChannel: String): AboutPage {
@@ -86,17 +86,17 @@ class AboutPage(var context: Context) {
     }
 
     fun addPlayStore(playStoreId: String): AboutPage {
-        return addPlayStore(context.getString(R.string.title_email), playStoreId)
+        return addPlayStore(context.getString(R.string.title_play_store), playStoreId)
     }
 
     fun addPlayStore(title: String, playStoreId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_playsotre, title)
+        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_playstore, title)
         itemView.setOnClickListener({ openPlayStore(context, playStoreId) })
         return this
     }
 
     fun addInstagram(userId: String): AboutPage {
-        return addInstagram(context.getString(R.string.title_email), userId)
+        return addInstagram(context.getString(R.string.title_instagram), userId)
     }
 
     fun addInstagram(title: String, userId: String): AboutPage {
@@ -106,7 +106,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addGithub(userId: String): AboutPage {
-        return addGithub(context.getString(R.string.title_email), userId)
+        return addGithub(context.getString(R.string.title_github), userId)
     }
 
     fun addGithub(title: String, userId: String): AboutPage {
@@ -116,7 +116,7 @@ class AboutPage(var context: Context) {
     }
 
     fun addPinterest(userId: String): AboutPage {
-        return addPinterest(context.getString(R.string.title_email), userId)
+        return addPinterest(context.getString(R.string.title_pinterest), userId)
     }
 
     fun addPinterest(title: String, userId: String): AboutPage {
