@@ -125,6 +125,11 @@ class AboutPage(var context: Context) {
         return this
     }
 
+    fun addItem(view: View): AboutPage {
+        addItem(layoutInflater, context, elementsGroup, view)
+        return this
+    }
+
     fun create(): View {
         return this.rootView
     }
