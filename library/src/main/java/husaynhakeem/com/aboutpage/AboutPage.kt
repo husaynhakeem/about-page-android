@@ -1,20 +1,38 @@
 package husaynhakeem.com.aboutpage
 
 import android.content.Context
+import android.support.annotation.DrawableRes
+import android.support.annotation.StringRes
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.about_page.view.*
 
 class AboutPage(var context: Context) {
 
     var layoutInflater: LayoutInflater
-    var view: View
+    var rootView: View
     var elementsGroup: ViewGroup
 
     init {
         layoutInflater = LayoutInflater.from(context)
-        view = layoutInflater.inflate(R.layout.about_page, null, false)
-        elementsGroup = view.findViewById(R.id.ll_elements)
+        rootView = layoutInflater.inflate(R.layout.about_page, null, false)
+        elementsGroup = rootView.findViewById(R.id.ll_elements)
+    }
+
+    fun setImage(@DrawableRes logoResId: Int): AboutPage {
+        rootView.iv_logo.setImageDrawable(ContextCompat.getDrawable(context, logoResId))
+        return this
+    }
+
+    fun setDescription(@StringRes stringResId: Int): AboutPage {
+        return setDescription(context.getString(stringResId))
+    }
+
+    fun setDescription(text: String): AboutPage {
+        rootView.tv_description.text = text
+        return this
     }
 
     fun addEmail(email: String): AboutPage {
