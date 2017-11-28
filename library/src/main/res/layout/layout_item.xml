@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:paddingBottom="@dimen/space_small"
+    android:paddingTop="@dimen/space_small">
 
     <ImageView
         android:id="@+id/iv_item_icon"
@@ -13,7 +14,6 @@
         android:layout_marginEnd="@dimen/icon_title_margin"
         android:layout_marginRight="@dimen/icon_title_margin"
         android:contentDescription="@string/item_icon_description"
-        android:scaleType="centerCrop"
         tools:src="@drawable/ic_email" />
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_toEndOf="@+id/iv_item_icon"
         android:layout_toRightOf="@+id/iv_item_icon"
         android:textColor="@android:color/secondary_text_light"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_normal"
         tools:text="@string/title_email" />
 
 </RelativeLayout>

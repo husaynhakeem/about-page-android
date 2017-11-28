@@ -12,9 +12,9 @@
 
         <ImageView
             android:id="@+id/iv_logo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="@dimen/logo_dimension"
+            android:layout_height="@dimen/logo_dimension"
+            android:layout_margin="@dimen/space_large"
             android:contentDescription="@string/logo_description"
             app:srcCompat="@drawable/ic_placeholder" />
 
@@ -23,16 +23,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="16dp"
+            android:lineSpacingExtra="@dimen/space_small"
+            android:paddingLeft="@dimen/space_large"
+            android:paddingRight="@dimen/space_large"
             android:text="@string/dummy_description"
             android:textColor="@android:color/secondary_text_light"
-            android:textSize="14sp" />
+            android:textSize="@dimen/text_normal" />
 
         <LinearLayout
             android:id="@+id/ll_elements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_marginTop="@dimen/space_large"
+            android:orientation="vertical"
+            android:padding="@dimen/space_normal" />
 
     </LinearLayout>
 </ScrollView>

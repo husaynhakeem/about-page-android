@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="icon_dimension">30dp</dimen>
+    <dimen name="logo_dimension">100dp</dimen>
+    <dimen name="icon_dimension">24dp</dimen>
+
     <dimen name="separator_height">1dp</dimen>
     <dimen name="icon_title_margin">8dp</dimen>
+    <dimen name="text_normal">15sp</dimen>
+
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_normal">16dp</dimen>
+    <dimen name="space_large">24dp</dimen>
 
 </resources>
