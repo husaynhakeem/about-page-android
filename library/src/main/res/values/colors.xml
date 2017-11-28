@@ -11,4 +11,6 @@
     <color name="tint_website">#657786</color>
     <color name="tint_youtube">#ff0000</color>
 
+    <color name="separator_gray">#c1c1c1</color>
+
 </resources>

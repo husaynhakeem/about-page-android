@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/space_small"
-    android:paddingTop="@dimen/space_small">
+    android:paddingBottom="@dimen/space_normal"
+    android:paddingLeft="@dimen/space_normal"
+    android:paddingRight="@dimen/space_normal"
+    android:paddingTop="@dimen/space_normal">
 
     <ImageView
         android:id="@+id/iv_item_icon"

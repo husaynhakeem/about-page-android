@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.layout_item.view.*
 fun addItem(layoutInflater: LayoutInflater, context: Context, elementsGroup: ViewGroup, @DrawableRes icon: Int, @ColorRes iconTint: Int, title: String): View {
     val itemView = viewFromItem(layoutInflater, context, icon, iconTint, title)
     elementsGroup.addView(itemView)
-    elementsGroup.addView(layoutInflater.inflate(R.layout.layout_separator, null))
+    elementsGroup.addView(layoutInflater.inflate(R.layout.layout_separator, null), ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, context.resources.getDimensionPixelSize(R.dimen.separator_height)))
     return itemView
 }
 
