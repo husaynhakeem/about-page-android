@@ -124,4 +124,8 @@ class AboutPage(var context: Context) {
         itemView.setOnClickListener({ openPinterest(context, userId) })
         return this
     }
+
+    fun create(): View {
+        return this.rootView
+    }
 }
