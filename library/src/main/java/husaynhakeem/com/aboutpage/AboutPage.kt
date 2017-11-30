@@ -120,16 +120,6 @@ class AboutPage(var context: Context) {
         return this
     }
 
-    fun addPinterest(userId: String): AboutPage {
-        return addPinterest(context.getString(R.string.title_pinterest), userId)
-    }
-
-    fun addPinterest(title: String, userId: String): AboutPage {
-        val itemView = addItem(layoutInflater, context, elementsGroup, R.drawable.ic_pinterest, R.color.tint_pinterest, title)
-        itemView.setOnClickListener({ openPinterest(context, userId) })
-        return this
-    }
-
     fun addItem(view: View): AboutPage {
         addItem(layoutInflater, context, elementsGroup, view)
         return this

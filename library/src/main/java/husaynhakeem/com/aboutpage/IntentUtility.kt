@@ -93,12 +93,3 @@ fun openGithub(context: Context, userId: String) {
         e.printStackTrace()
     }
 }
-
-fun openPinterest(context: Context, userId: String) {
-    try {
-        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("pinterest://www.pinterest.com/<profile-name>")))
-    } catch (e: ActivityNotFoundException) {
-        Log.e(TAG, "Pinterest application uninstalled on current device")
-        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.pinterest.com/<profile-name>")))
-    }
-}
