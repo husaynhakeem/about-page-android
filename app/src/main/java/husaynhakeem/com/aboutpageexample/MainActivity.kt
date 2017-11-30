@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(AboutPage(this)
                 .setBackground(android.R.color.white)
+                .setImage(R.mipmap.ic_launcher)
                 .addItem(Item("AboutPage Version 1.0"))
                 .addEmail("husaynhakeem@gmail.com")
                 .addFacebook("linkinpark")
