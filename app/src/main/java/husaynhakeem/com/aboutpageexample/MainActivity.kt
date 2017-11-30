@@ -11,10 +11,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val rootView = AboutPage(this)
+        setContentView(AboutPage(this)
                 .setBackground(android.R.color.white)
-                .addItem(Item("Version 1.0"))
+                .addItem(Item("AboutPage Version 1.0"))
                 .addEmail("husaynhakeem@gmail.com")
                 .addFacebook("linkinpark")
                 .addGithub("husaynhakeem")
@@ -23,9 +22,7 @@ class MainActivity : AppCompatActivity() {
                 .addTwitter("oneplus")
                 .addWebsite("http://www.google.com")
                 .addYoutube("UCyWqModMQlbIo8274Wh_ZsQ")
-                .addItem(Item("Copyright stuff", null, View.OnClickListener { Toast.makeText(this, "Copyright stuff", Toast.LENGTH_SHORT).show() }))
-                .create()
-
-        setContentView(rootView)
+                .addItem(Item("Thank you for downloading", null, View.OnClickListener { Toast.makeText(this, "Enjoy!", Toast.LENGTH_SHORT).show() }))
+                .create())
     }
 }
