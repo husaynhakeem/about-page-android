@@ -3,4 +3,4 @@ package husaynhakeem.com.aboutpage
 import android.view.View
 
 
-class Item(val title: String?, val icon: Int?, val onClickListener: View.OnClickListener?)
+class Item(val title: String? = null, val icon: Int? = null, val onClickListener: View.OnClickListener? = null)
