@@ -21,6 +21,11 @@ class AboutPage(var context: Context) {
         elementsGroup = rootView.findViewById(R.id.ll_elements)
     }
 
+    fun setBackground(background: Int): AboutPage {
+        setViewBackground(context, rootView, background)
+        return this
+    }
+
     fun setImage(@DrawableRes logoResId: Int): AboutPage {
         rootView.iv_logo.setImageDrawable(ContextCompat.getDrawable(context, logoResId))
         return this

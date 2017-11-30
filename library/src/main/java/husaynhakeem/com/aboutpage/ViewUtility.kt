@@ -1,14 +1,19 @@
 package husaynhakeem.com.aboutpage
 
 import android.content.Context
+import android.content.res.Resources
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.layout_item.view.*
 
+private val TAG = "About Page"
+private val RESOURCE_TYPE_DRAWABLE = "drawable"
+private val RESOURCE_TYPE_COLOR = "color"
 
 fun addItem(layoutInflater: LayoutInflater, context: Context, elementsGroup: ViewGroup, @DrawableRes icon: Int, @ColorRes iconTint: Int, title: String): View {
     val itemView = viewFromItem(layoutInflater, context, icon, iconTint, title)
@@ -32,4 +37,17 @@ fun viewFromItem(layoutInflater: LayoutInflater, context: Context, @DrawableRes 
 
 fun addSeparator(layoutInflater: LayoutInflater, context: Context, elementsGroup: ViewGroup) {
     elementsGroup.addView(layoutInflater.inflate(R.layout.layout_separator, null), ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, context.resources.getDimensionPixelSize(R.dimen.separator_height)))
+}
+
+fun setViewBackground(context: Context, view: View, background: Int) {
+    try {
+        val backgroundType: String = context.resources.getResourceTypeName(background)
+        when (backgroundType) {
+            RESOURCE_TYPE_DRAWABLE -> view.background = ContextCompat.getDrawable(context, background)
+            RESOURCE_TYPE_COLOR -> view.setBackgroundColor(ContextCompat.getColor(context, background))
+            else -> throw Resources.NotFoundException("Background resource must be a drawable or color")
+        }
+    } catch (e: Resources.NotFoundException) {
+        Log.e(TAG, e.message)
+    }
 }
