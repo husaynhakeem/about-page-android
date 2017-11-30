@@ -27,6 +27,17 @@ fun addItem(layoutInflater: LayoutInflater, context: Context, elementsGroup: Vie
     addSeparator(layoutInflater, context, elementsGroup)
 }
 
+fun addItem(layoutInflater: LayoutInflater, context: Context, elementsGroup: ViewGroup, item: Item) {
+    val itemView = layoutInflater.inflate(R.layout.layout_item, null)
+    itemView.tv_item_title.text = item.title
+    when (item.icon) {
+        null -> itemView.iv_item_icon.visibility = View.GONE
+        else -> itemView.iv_item_icon.setImageDrawable(ContextCompat.getDrawable(context, item.icon))
+    }
+    itemView.setOnClickListener(item.onClickListener)
+    addItem(layoutInflater, context, elementsGroup, itemView)
+}
+
 fun viewFromItem(layoutInflater: LayoutInflater, context: Context, @DrawableRes icon: Int, @ColorRes iconTint: Int, title: String): View {
     val itemView = layoutInflater.inflate(R.layout.layout_item, null)
     itemView.iv_item_icon.setImageDrawable(ContextCompat.getDrawable(context, icon))

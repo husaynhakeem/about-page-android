@@ -7,9 +7,6 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.util.Log
 
-
-
-
 private val TAG = "About Page"
 private val EMAIL_URI_PREFIX = "mailto:"
 
