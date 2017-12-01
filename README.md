@@ -41,7 +41,7 @@ allprojects {
 2. Add the dependency
 ```groovy
 dependencies {
-    compile 'com.github.husaynhakeem:about-page:0.1.0'
+    compile 'com.github.husaynhakeem:about-page:0.1.1'
 }
 ```
 
