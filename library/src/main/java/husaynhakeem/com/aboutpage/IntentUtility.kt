@@ -9,6 +9,18 @@ import android.util.Log
 
 private val TAG = "About Page"
 private val EMAIL_URI_PREFIX = "mailto:"
+private val FACEBOOK_DEEPLINK_URL_PREFIX = "fb://facewebmodal/f?href="
+private val FACEBOOK_WEB_URL_LINK = "http://m.facebook.com/"
+private val FACEBOOK_PACKAGE_ID = "com.facebook.katana"
+private val TWITTER_WEB_URL_PREFIX = "http://twitter.com/intent/user?screen_name="
+private val TWITTER_DEEPLINK_URL_PREFIX = "twitter://user?screen_name="
+private val TWITTER_PACKAGE_ID = "com.twitter.android"
+private val YOUTUBE_URL_PREFIX = "http://www.youtube.com/user/channel/"
+private val YOUTUBE_PACKAGE_ID = "com.google.android.youtube"
+private val INSTAGRAM_URL_PREFIX = "http://instagram.com/_u/"
+private val INSTAGRAM_PACKAGE_ID = "com.instagram.android"
+private val PLAY_STORE_URL_PREFIX = "market://details?id="
+private val GITHUB_URL_PREFIX = "https://github.com/"
 
 fun sendEmail(context: Context, emailAddress: String) {
     try {
@@ -29,11 +41,11 @@ fun openWebPage(context: Context, webPageUrl: String) {
 }
 
 fun openFacebookPage(context: Context, facebookUsername: String) {
-    var facebookUri = Uri.parse("http://m.facebook.com/" + facebookUsername)
+    var facebookUri = Uri.parse(FACEBOOK_WEB_URL_LINK + facebookUsername)
     try {
-        val applicationInfo = context.packageManager.getApplicationInfo("com.facebook.katana", 0)
+        val applicationInfo = context.packageManager.getApplicationInfo(FACEBOOK_PACKAGE_ID, 0)
         if (applicationInfo.enabled)
-            facebookUri = Uri.parse("fb://facewebmodal/f?href=" + facebookUsername)
+            facebookUri = Uri.parse(FACEBOOK_DEEPLINK_URL_PREFIX + facebookUsername)
     } catch (e: PackageManager.NameNotFoundException) {
         Log.e(TAG, "Facebook application uninstalled on current device")
     }
@@ -41,11 +53,11 @@ fun openFacebookPage(context: Context, facebookUsername: String) {
 }
 
 fun openTwitter(context: Context, twitterId: String) {
-    var twitterUri = Uri.parse("http://twitter.com/intent/user?screen_name=" + twitterId)
+    var twitterUri = Uri.parse(TWITTER_WEB_URL_PREFIX + twitterId)
     try {
-        val applicationInfo = context.packageManager.getApplicationInfo("com.twitter.android", 0)
+        val applicationInfo = context.packageManager.getApplicationInfo(TWITTER_PACKAGE_ID, 0)
         if (applicationInfo.enabled)
-            twitterUri = Uri.parse("twitter://user?screen_name=" + twitterId)
+            twitterUri = Uri.parse(TWITTER_DEEPLINK_URL_PREFIX + twitterId)
     } catch (e: PackageManager.NameNotFoundException) {
         Log.e(TAG, "Twitter application uninstalled on current device")
     }
@@ -53,9 +65,9 @@ fun openTwitter(context: Context, twitterId: String) {
 }
 
 fun openYoutube(context: Context, youtubeChannel: String) {
-    val youtubeIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/user/channel/" + youtubeChannel))
+    val youtubeIntent = Intent(Intent.ACTION_VIEW, Uri.parse(YOUTUBE_URL_PREFIX + youtubeChannel))
     try {
-        youtubeIntent.setPackage("com.google.android.youtube")
+        youtubeIntent.setPackage(YOUTUBE_PACKAGE_ID)
         context.startActivity(youtubeIntent)
     } catch (e: ActivityNotFoundException) {
         Log.e(TAG, "Youtube application uninstalled on current device")
@@ -65,7 +77,7 @@ fun openYoutube(context: Context, youtubeChannel: String) {
 
 fun openPlayStore(context: Context, playStoreId: String) {
     try {
-        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + playStoreId)))
+        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PLAY_STORE_URL_PREFIX + playStoreId)))
     } catch (e: ActivityNotFoundException) {
         Log.e(TAG, "Play store not installed on current device")
         e.printStackTrace()
@@ -73,9 +85,9 @@ fun openPlayStore(context: Context, playStoreId: String) {
 }
 
 fun openInstagram(context: Context, userId: String) {
-    val instagramIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/_u/" + userId))
+    val instagramIntent = Intent(Intent.ACTION_VIEW, Uri.parse(INSTAGRAM_URL_PREFIX + userId))
     try {
-        instagramIntent.setPackage("com.instagram.android")
+        instagramIntent.setPackage(INSTAGRAM_PACKAGE_ID)
         context.startActivity(instagramIntent)
     } catch (e: ActivityNotFoundException) {
         Log.e(TAG, "Instagram application uninstalled on current device")
@@ -84,7 +96,7 @@ fun openInstagram(context: Context, userId: String) {
 }
 
 fun openGithub(context: Context, userId: String) {
-    val githubIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/" + userId))
+    val githubIntent = Intent(Intent.ACTION_VIEW, Uri.parse(GITHUB_URL_PREFIX + userId))
     try {
         githubIntent.addCategory(Intent.CATEGORY_BROWSABLE)
         context.startActivity(githubIntent)
