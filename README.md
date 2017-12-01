@@ -33,17 +33,17 @@ This library is based on [Android About Page](https://github.com/medyo/android-a
 1. Add below code in your root build.gradle at the end of repositories
 ```groovy
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 2. Add the dependency
 ```groovy
 dependencies {
-	        compile 'com.github.husaynhakeem:about-page:0.1.0'
-	}
+    compile 'com.github.husaynhakeem:about-page:0.1.0'
+}
 ```
 
 ### Contributing
