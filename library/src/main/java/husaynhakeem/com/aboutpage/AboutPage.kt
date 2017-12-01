@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.about_page.view.*
 
 class AboutPage(var context: Context) {
 
-    var layoutInflater: LayoutInflater
-    var rootView: View
-    var elementsGroup: ViewGroup
+    private var layoutInflater: LayoutInflater
+    private var rootView: View
+    private var elementsGroup: ViewGroup
 
     init {
         layoutInflater = LayoutInflater.from(context)
