@@ -47,6 +47,7 @@ dependencies {
 
 ### Sample application
 For additional information on how to use this library, check out the [sample application](https://github.com/husaynhakeem/about-page/tree/master/app).
+
 ![alt text](https://github.com/husaynhakeem/about-page/blob/master/app/about-page.png)
 
 ### Contributing
